@@ -28,8 +28,8 @@ def create_specimen_identifier():
 
 def create_subject_identifier():
     """Create subject_identifier for screening EIT"""
-    start = 300
-    end = 400
+    start = 400
+    end = 500
     #protocol = "074"
     protocol = "S"
     clinician = 1
