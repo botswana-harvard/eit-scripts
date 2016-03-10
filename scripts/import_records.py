@@ -1,8 +1,11 @@
+"""This is a script that is used to restore Redcap database backups."""
+
 import csv
 import json
 from datetime import datetime
 from requests import post
 
+# change file name to use backupup that is to be restored
 file = open('export_TEST_2016-03-08 10:58:46-953057.json', 'r')
 lines = json.load(file)
 URL = 'https://redcap.sph.harvard.edu/redcap/api/'
