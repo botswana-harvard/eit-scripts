@@ -28,8 +28,8 @@ def create_specimen_identifier():
 
 def create_subject_identifier():
     """Create subject_identifier for screening EIT"""
-    start = 601
-    end = 701
+    start = 1003
+    end = 1103
     #protocol = "074"
     protocol = "S"
     clinician = 1
@@ -61,7 +61,7 @@ from datetime import date, datetime
 start = 1
 end = 20
 
-file = open('Subject Identifiers batch 7.csv', 'w')
+file = open('Subject Identifiers batch 11.csv', 'w')
 to_file = csv.writer(file)
 data = []
 create_subject_identifier()
