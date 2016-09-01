@@ -63,7 +63,7 @@ start = 1
 end = 20
 
 #file = open('Subject Identifiers batch 11.csv', 'w')
-file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Subject Identifiers batch 11.csv'), 'w')
+file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(1).child('screen_bids'), 'Subject Identifiers batch 11.csv'), 'w')
 to_file = csv.writer(file)
 data = []
 create_subject_identifier()
