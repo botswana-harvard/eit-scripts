@@ -1,6 +1,6 @@
 
 # eit scripts
-This readme serves to give a brief explanation on the the different scripts that exists in this folder.
+This readme serves to give a brief explanation on the different scripts that exists in this folder.
 
 1. export_records.py ~ Backup
 This python script is used to take a backup of the screening and enrolled databases in redcap.
