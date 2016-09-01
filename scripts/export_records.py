@@ -1,6 +1,7 @@
 """This is a script that is used to export the screening and enrolled redcap databases.
 It is run through a cronjob in the eit virtual machine"""
 
+import os
 from unipath import Path
 import csv
 from datetime import datetime

@@ -1,5 +1,6 @@
 """This is a script that is used to restore Redcap database backups."""
 
+import os
 import csv
 import json
 from unipath import Path

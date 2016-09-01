@@ -1,4 +1,4 @@
-
+import os
 import csv
 from unipath import Path
 from edc.core.identifier.classes import CheckDigit
