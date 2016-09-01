@@ -1,12 +1,14 @@
 """This is a script that is used to export the screening and enrolled redcap databases.
 It is run through a cronjob in the eit virtual machine"""
 
+from unipath import Path
 import csv
 from datetime import datetime
 import json
 from requests import post
 
-file = open('token.txt', 'r')
+#file = open('token.txt', 'r')
+file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'token.txt'), 'r')
 lines = file.readlines()
 
 URL = 'https://redcap.sph.harvard.edu/redcap/api/'

@@ -1,11 +1,14 @@
 """Cater for NOT RESULT but received"""
 
 import csv
+from unipath import Path
 from django.db import models
 
 def verify_lab_results():
-    file = open('check.csv')
-    specimen_errors = open('Incorrect Enrolled Specimen Identifiers.csv', 'w')
+    #file = open('check.csv')
+    #specimen_errors = open('Incorrect Enrolled Specimen Identifiers.csv', 'w')
+    file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'check.csv'), 'r')
+    specimen_errors = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Incorrect Enrolled Specimen Identifiers.csv'), 'w')
     to_file = csv.writer(specimen_errors)
     lines = csv.reader(file)
     model = models.get_model('lab_result','Result')
@@ -25,8 +28,10 @@ def verify_lab_results():
 verify_lab_results()
     
 def verify_screening_results():
-    file = open('screen_results.csv')
-    specimen_errors = open('Incorrect Screening Specimen Identifiers.csv', 'w')
+    #file = open('screen_results.csv')
+    #specimen_errors = open('Incorrect Screening Specimen Identifiers.csv', 'w')
+    file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'screen_results.csv'), 'r')
+    specimen_errors = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Incorrect Screening Specimen Identifiers.csv'), 'w')
     to_file = csv.writer(specimen_errors)
     lines = csv.reader(file)
     model = models.get_model('lab_result','Result')

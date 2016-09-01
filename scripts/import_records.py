@@ -2,11 +2,13 @@
 
 import csv
 import json
+from unipath import Path
 from datetime import datetime
 from requests import post
 
 # change file name to use backupup that is to be restored
-file = open('export_TEST_2016-03-08 10:58:46-953057.json', 'r')
+#file = open('export_test.json', 'r')
+file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'export_test'), 'r')
 lines = json.load(file)
 URL = 'https://redcap.sph.harvard.edu/redcap/api/'
 data = []

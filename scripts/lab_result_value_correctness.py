@@ -1,10 +1,13 @@
 import csv
+from unipath import Path
 from django.db import models
 
 def child_viral_load():
     """Ensure that the all the values of the child viral load match those in the lis."""
-    file = open('child_viral_load_results.csv', 'r')
-    specimen_errors = open('Incorrect Child Viral Load Result.csv', 'w')
+    #file = open('child_viral_load_results.csv', 'r')
+    #specimen_errors = open('Incorrect Child Viral Load Result.csv', 'w')
+    file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'child_viral_load_results.csv'), 'r')
+    specimen_errors = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Incorrect Child Viral Load Result.csv'), 'w')
     to_file = csv.writer(specimen_errors)
     lines = csv.reader(file)
     model = models.get_model('lab_result_item','ResultItem')
@@ -34,8 +37,10 @@ import csv
 from django.db import models
 def child_cd4():
     """Ensure that the all the values of the child CD4 match those in the lis."""
-    file = open('child_cd4.csv')
-    specimen_errors = open('Child CD4 Result Querry.csv', 'w')
+    #file = open('child_cd4.csv')
+    #specimen_errors = open('Child CD4 Result Querry.csv', 'w')
+    file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'child_viral_load_results.csv'), 'r')
+    specimen_errors = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Child CD4 Result Query.csv'), 'w')
     to_file = csv.writer(specimen_errors)
     lines = csv.reader(file)
     model = models.get_model('lab_result_item','ResultItem')
@@ -79,8 +84,10 @@ import csv
 from django.db import models
 def child_hematology():
     """Ensure that the all the values of the child Hematology match those in the lis."""
-    file = open('child_hema.csv')
-    specimen_errors = open('Child Hema Result Querry.csv', 'w')
+    #file = open('child_hema.csv')
+    #specimen_errors = open('Child Hema Result Querry.csv', 'w')
+    file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'child_viral_load_results.csv'), 'r')
+    specimen_errors = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Child Hema Result Querry.csv'), 'w')
     to_file = csv.writer(specimen_errors)
     lines = csv.reader(file)
     model = models.get_model('lab_result_item','ResultItem')
@@ -173,8 +180,10 @@ import csv
 from django.db import models
 def child_chemistry():
     """Ensure that the all the values of the child chemistry match those in the lis."""
-    file = open('child_chem.csv')
-    specimen_errors = open('Child Chemistry Result Querry.csv', 'w')
+    #file = open('child_chem.csv')
+    #specimen_errors = open('Child Chemistry Result Querry.csv', 'w')
+    file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'child_chem.csv'), 'r')
+    specimen_errors = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Child Chemistry Result Querry.csv'), 'w')
     to_file = csv.writer(specimen_errors)
     lines = csv.reader(file)
     model = models.get_model('lab_result_item','ResultItem')
@@ -246,8 +255,10 @@ child_chemistry()
 
 def child_viral_load():
     """Ensure that the all the values of the child viral load match those in the lis."""
-    file = open('child_viral_load_results.csv', 'r')
-    specimen_errors = open('Incorrect Child Viral Load Result.csv', 'w')
+    #file = open('child_viral_load_results.csv', 'r')
+    #specimen_errors = open('Incorrect Child Viral Load Result.csv', 'w')
+    file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'child_viral_load_results.csv'), 'r')
+    specimen_errors = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Incorrect Child Viral Load Result.csv'), 'w')
     to_file = csv.writer(specimen_errors)
     lines = csv.reader(file)
     model = models.get_model('lab_result_item','ResultItem')
@@ -277,8 +288,10 @@ import csv
 from django.db import models
 def maternal_cd4():
     """Ensure that the all the values of the child CD4 match those in the lis."""
-    file = open('maternal_cd4.csv')
-    specimen_errors = open('Maternal CD4 Result Querry.csv', 'w')
+    #file = open('maternal_cd4.csv')
+    #specimen_errors = open('Maternal CD4 Result Querry.csv', 'w')
+    file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'maternal_cd4.csv'), 'r')
+    specimen_errors = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Maternal CD4 Result Querry.csv'), 'w')
     to_file = csv.writer(specimen_errors)
     lines = csv.reader(file)
     model = models.get_model('lab_result_item','ResultItem')

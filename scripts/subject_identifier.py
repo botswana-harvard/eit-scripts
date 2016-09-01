@@ -1,5 +1,6 @@
 
 import csv
+from unipath import Path
 from edc.core.identifier.classes import CheckDigit
 from string import ascii_uppercase
 
@@ -61,16 +62,11 @@ from datetime import date, datetime
 start = 1
 end = 20
 
-file = open('Subject Identifiers batch 11.csv', 'w')
+#file = open('Subject Identifiers batch 11.csv', 'w')
+file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Subject Identifiers batch 11.csv'), 'w')
 to_file = csv.writer(file)
 data = []
 create_subject_identifier()
 to_file.writerows(data)
 file.close()
 
-#file = open('Specimen Identifiers.csv', 'w')
-#to_file = csv.writer(file)
-#data = []
-#create_specimen_identifier()
-#to_file.writerows(data)
-#file.close()

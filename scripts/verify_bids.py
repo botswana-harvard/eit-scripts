@@ -1,11 +1,13 @@
 import csv
+from unipath import Path
 from edc.core.identifier.classes import CheckDigit
 
 def check_invalid_screening_bids():
     mod = CheckDigit()
     data.append([])
     data.append(['Incorrect Screening BIDS'])
-    file = open('screen_bids.txt', 'r')
+    #file = open('screen_bids.txt', 'r')
+    file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'screen_bids.txt'), 'r')
     subject_identifiers = file.readlines()
 
     for bid in subject_identifiers:
@@ -20,7 +22,8 @@ def check_invalid_enrolled_bids():
     mod = CheckDigit()
     data.append([])
     data.append(['Incorrect Enrolled BIDS'])
-    file = open('enroll_bids.txt', 'r')
+    #file = open('enroll_bids.txt', 'r')
+    file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'enroll_bids.txt'), 'r')
     subject_identifiers = file.readlines()
     enrolled_bids = []
     
@@ -38,8 +41,10 @@ def check_invalid_enrolled_bids():
 import csv
 from datetime import date, datetime
 
-screen_file = open('Invalid Screening Bids.csv', 'w')
-enroll_file = open('Invalid Enrolled Bids.csv', 'w')
+#screen_file = open('Invalid Screening Bids.csv', 'w')
+#enroll_file = open('Invalid Enrolled Bids.csv', 'w')
+screen_file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Invalid Screening Bids.csv'), 'w')
+enroll_file = open(os.path.join(Path(os.path.dirname(os.path.realpath(__file__))).ancestor(2).child('etc'), 'Invalid Enrolled Bids.csv'), 'w')
 to_file = csv.writer(screen_file)
 data = []
 check_invalid_screening_bids()
